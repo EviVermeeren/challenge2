@@ -45,7 +45,6 @@ export default function App() {
     setCounter4((currentCounter4) => currentCounter4 - 1);
   }
 
-
   let read = 'Nee 😭';
 
   const [flag, setFlag] = useBoolean();
@@ -108,7 +107,7 @@ export default function App() {
               style={styles.icon}
               source={{uri: 'https://cdn-icons-png.flaticon.com/512/1413/1413908.png'}}
             />
-          <Text style={styles.text}>{-counter}</Text>
+          <Text style={styles.text}>{-counter + -counter2 + -counter3 + -counter4}</Text>
         </View>
 
       </View>
@@ -148,7 +147,7 @@ export default function App() {
 <View style={styles.section}>
 
       <Text style={styles.booktitle}>Het meisje in het ijs</Text>
-      <BookTile author="Robert Bryndza" description="Haar ogen zijn wijd open. Haar lippen iets uiteen, alsof ze nog iets wil zeggen. Haar lichaam bevroren in het ijs. En ze is niet de enige… Als het lichaam van een jonge vrouw wordt gevonden in een park in Zuid-Londen, wordt inspecteur Erika Foster ingeschakeld om het moordonderzoek te leiden. Het slachtoffer, de mooie, jonge en rijke Andrea Douglas-Brown, leek het perfecte leven te leiden. Haar vader is een belangrijk en invloedrijk man, haar verloofde een gerespecteerd zakenman. Toch lijken er duistere geheimen te zijn. Werden die het meisje fataal?" isbn="978-9-0225-8510-8" stock={3 + counter2} read={read2}/>
+      <BookTile author="Robert Bryndza" description="Haar ogen zijn wijd open. Haar lippen iets uiteen, alsof ze nog iets wil zeggen. Haar lichaam bevroren in het ijs. En ze is niet de enige… Als het lichaam van een jonge vrouw wordt gevonden in een park in Zuid-Londen, wordt inspecteur Erika Foster ingeschakeld om het moordonderzoek te leiden. Het slachtoffer, de mooie, jonge en rijke Andrea Douglas-Brown, leek het perfecte leven te leiden. Haar vader is een belangrijk en invloedrijk man, haar verloofde een gerespecteerd zakenman. Toch lijken er duistere geheimen te zijn. Werden die het meisje fataal?" isbn="978-9-0225-8510-8" stock={9 + counter2} read={read2}/>
       
       <TouchableHighlight underlayColor="#0077B6" onPress={() => {decrease2(); console.log('test');}} style={styles.tile}> 
         <View>
