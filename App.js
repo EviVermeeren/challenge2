@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, Image, ScrollView, TouchableHighlight, TouchableWithoutFeedback, Button } from 'react-native';
 import React, { useState } from 'react';
+import { VStack, useBoolean } from "@react-native-material/core";
 
 import BookTile from './components/BookTile.js';
 import Line from './components/Line.js';
@@ -15,6 +16,18 @@ export default function App() {
 
   const decrease = () => {
     setCounter((currentCounter) => currentCounter - 1);
+  }
+
+  let read = 'Nee 😭';
+
+  const [flag, setFlag] = useBoolean();
+  if(flag == true){
+    console.log('ja');
+    read = 'Ja! 😎';
+  } 
+  if (flag == false){
+    console.log('nee');
+    read = 'Nee... 😭';
   }
 
   return (
@@ -42,7 +55,7 @@ export default function App() {
 
 
       <Text style={styles.booktitle}>Iene Miene Mutte</Text>
-      <BookTile author="M.J. Arlidge" description="Het meisje was amper nog in leven toen ze het bos uit kwam lopen. Het verhaal van haar ontvoering was donkerder dan de meest verschrikkelijke nachtmerrie. Maar alles wat ze zei was waar. Elk gruwelijk detail. Een aantal dagen later wordt een tweede in shock verkerend slachtoffer gevonden en ontstaat er een patroon. In tweetallen worden mensen ontvoerd, vastgehouden en uitgehongerd. Vervolgens krijgen ze een duivels dilemma voorgelegd: doden of gedood worden." isbn="978-9-0225-7622-9" stock={3 + counter}/>
+      <BookTile author="M.J. Arlidge" description="Het meisje was amper nog in leven toen ze het bos uit kwam lopen. Het verhaal van haar ontvoering was donkerder dan de meest verschrikkelijke nachtmerrie. Maar alles wat ze zei was waar. Elk gruwelijk detail. Een aantal dagen later wordt een tweede in shock verkerend slachtoffer gevonden en ontstaat er een patroon. In tweetallen worden mensen ontvoerd, vastgehouden en uitgehongerd. Vervolgens krijgen ze een duivels dilemma voorgelegd: doden of gedood worden." isbn="978-9-0225-7622-9" stock={3 + counter} read={read}/>
       
       <TouchableHighlight underlayColor="#0077B6" onPress={decrease} style={styles.tile}>
         <View>
@@ -56,7 +69,7 @@ export default function App() {
         </View>
       </TouchableHighlight>
 
-      <TouchableHighlight underlayColor="#0077B6" onPress={console.log(counter)} style={styles.tile}>
+      <TouchableHighlight underlayColor="#0077B6" onPress={setFlag.toggle} style={styles.tile}>
         <View>
             <Text style={styles.tileText}>Gelezen</Text>
         </View>

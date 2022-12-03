@@ -8,6 +8,7 @@ const BookTile = (props) => {
             <Text style={styles.description}>{props.description}</Text>
             <Text style={styles.isbn}>ISBN {props.isbn}</Text>
             <Text style={styles.isbn}>Stock: {props.stock}</Text>
+            <Text style={styles.isbn}>Gelezen: {props.read}</Text>
 
       </View>
     );
