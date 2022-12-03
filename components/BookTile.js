@@ -7,6 +7,7 @@ const BookTile = (props) => {
             <Text style={styles.bookauthor}>van {props.author}</Text>
             <Text style={styles.description}>{props.description}</Text>
             <Text style={styles.isbn}>ISBN {props.isbn}</Text>
+            <Text style={styles.isbn}>Stock: {props.stock}</Text>
 
       </View>
     );
@@ -22,18 +23,15 @@ bookoverview: {
 
   bookauthor: {
     fontSize: 18,
-    fontFamily: 'MaliExtraLight',
   }, 
   
   description: {
     marginTop: 15,
     marginRight: 35,
-    fontFamily: 'VarelaRoundRegular',
   }, 
 
   isbn: {
     marginTop: 15,
-    fontFamily: 'VarelaRoundRegular',
   }, 
 
 });
